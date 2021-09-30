@@ -31,14 +31,16 @@
     </div>
   </header>
 
-  <div>
+  <div class="wrap">
     @foreach ($articles as $article)
-    <a href="{{ route('shop.list', ['id' => $article->id]) }}">
-    @foreach ($article->images as $image)
-    <img src="{{ Storage::url($image->file_path) }}"/>
-    @endforeach
-      <p>{{ $article->name }}</p>
-      <p>{{ $article->price }}</p></a>
+      <div class="item">
+        <a href="{{ route('shop.list', ['id' => $article->id]) }}">
+        @foreach ($article->images as $image)
+          <img src="{{ Storage::url($image->file_path) }}"/>
+        @endforeach
+          <h2>{{ $article->name }}</h2>
+          <p>¥{{ $article->price }}</p></a>
+      </div>
     @endforeach
   </div>
 </body>

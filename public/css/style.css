@@ -38,3 +38,33 @@ header li {
 .article a:hover {
   text-decoration: underline;
 }
+
+
+/* shopページトップ */
+.wrap {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+
+.item {
+  height: 415px;
+  padding: 20px;
+  width: 30%;
+  /* background-color: olive; */
+  text-align: center;
+}
+
+.item img {
+  height: 80%;
+
+}
+
+.item a {
+  text-decoration: none;
+  color: black;
+}
+
+.item h2, p{
+  margin: 0;
+}
