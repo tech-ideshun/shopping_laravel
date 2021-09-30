@@ -43,7 +43,7 @@
   </div>
   
 
-  <a href="{{ route('') }}"></a>
+  
 
   <div>
     <a href="{{ route('shop.home') }}">戻る</a>
