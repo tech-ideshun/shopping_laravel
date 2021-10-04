@@ -1,28 +1,124 @@
 body {
-  padding-top: 80px;
+  /* padding: 0 30px; */
+  font-family: HelveticaLTWXX-BoldCond,HelveticaNeue-CondensedBold,Helvetica Neue,Helvetica,Hiragino Kaku Gothic ProN,ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ ProN W3,YuGothic,-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
-header {
+
+/* header一列目 */
+.site-header {
+  padding: 0 30px;
+  /* height: 57px; */
+}
+
+.wrapper {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.shopImage img {
+  width: 180px;
+}
+
+.shopImage img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  /* flex-wrap: wrap; */
+  /* width: calc(100% - 200px); */
+
+  list-style: none;
+  /* justify-content: center; */
+}
+
+nav li:not(:last-child) {
+  margin-right: 40px;
+}
+
+nav li {
+  float: left;
+  width: 100px;
+}
+
+nav li a {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
   text-align: center;
-}
-
-header a {
   text-decoration: none;
   color: black;
 }
 
-header a:hover {
+nav li a span {
+  color: #053e62;
+  font-size: 13px;
+}
+
+/* navバーのアニメーション開始 */
+
+.gnavi li a {
+  position: relative;
+}
+
+.gnavi li.current a,
+.gnavi li a:hover {
+  color: #0481A2;
+}
+
+.gnavi li a::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+
+  /* 線の形状 */
+  width: 80%;
+  height: 2px;
+  background: #0481A2;
+
+  /* アニメーションの指定 */
+  transition: all .3s;
+  transform: scale(0,1);
+  transform-origin: center top;
+}
+
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+  transform: scale(1, 1);
+}
+
+/* navバーのアニメーション終了 */
+
+
+/* header二列目 */
+.section-header {
+  text-align: center;
+}
+
+.section-header a {
+  text-decoration: none;
+  color: black;
+}
+
+.section-header a:hover {
   text-decoration: underline;
 }
 
 /* ulとliに中央揃えのコンボ適応 */
-header ul {
+.section-header ul {
   list-style: none;
   display: inline-block;
   padding: 0;
 }
 
-header li {
+.section-header li {
   display: inline;
   padding: 4px 15px;
   margin: 0 35px;
@@ -67,4 +163,18 @@ header li {
 
 .item h2, p{
   margin: 0;
+}
+
+/* accessページ */
+.access {
+  height: 60px;
+}
+
+.access h1{
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin-bottom: 0%;
+
+  line-height: 60px;
 }

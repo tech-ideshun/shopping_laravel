@@ -19,6 +19,9 @@ Route::get('/shoptop', [CustomerController::class,'index'])->name('shop.home');
 // 管理
 Route::get('/shopping/new', [ProductController::class,'category'])->name('shopping.new');
 
+// customer
+Route::get('/shop/access', [CustomerController::class,'access'])->name('shop.access');
+
 // 管理
 Route::post('/shopping', [ProductController::class,'save'])->name('shopping.save');
 

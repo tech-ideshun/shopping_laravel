@@ -109,4 +109,16 @@ class CustomerController extends Controller
         $uploads = DB::table("images")->where("product_id",$id)->get();
         return view('buy', ['article' => $article, 'uploads' => $uploads]);
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function access()
+    {
+        return view('access');
+    }
+
 }
+
