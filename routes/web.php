@@ -25,6 +25,15 @@ Route::get('/shop/access', [CustomerController::class,'access'])->name('shop.acc
 // 管理
 Route::post('/shopping', [ProductController::class,'save'])->name('shopping.save');
 
+// customer
+Route::get('/shop/contact', [CustomerController::class,'contact'])->name('shop.contact');
+
+// customer
+Route::post('/shop/confirm', [CustomerController::class,'confirm'])->name('shop.confirm');
+
+// customer
+Route::post('/shop/send', [CustomerController::class,'send'])->name('shop.send');
+
 // 管理
 Route::get('/shop/item', [CustomerController::class,'item'])->name('item.list');
 

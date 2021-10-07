@@ -120,5 +120,51 @@ class CustomerController extends Controller
         return view('access');
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function confirm(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'tel' => 'required',
+            'contact' => 'required'
+        ]);
+        $input = $request->all();
+        // dd($input);
+        return view('confirm', ['input' => $input]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function send(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'tel' => 'required',
+            'contact' => 'required'
+        ]);
+        $input = $request->all();
+        // dd($input);
+        return view('confirm', ['input' => $input]);
+    }
+
 }
 
