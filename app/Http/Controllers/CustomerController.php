@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\UploadImage;
+use App\Models\Contact;
 use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
@@ -138,10 +139,10 @@ class CustomerController extends Controller
     public function confirm(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'tel' => 'required',
-            'contact' => 'required'
+            'name' => 'required|max:10',
+            'email' => 'required|email',
+            'tel' => 'required|numeric|digits_between:10,11',
+            'contact' => 'required|max:1000'
         ]);
         $input = $request->all();
         // dd($input);
@@ -153,17 +154,21 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function send(Request $request)
+    public function send(Request $request, Contact $contact)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'tel' => 'required',
-            'contact' => 'required'
+            'name' => 'required|max:10',
+            'email' => 'required|email',
+            'tel' => 'required|numeric|digits_between:10,11',
+            'contact' => 'required|max:1000'
         ]);
-        $input = $request->all();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->tel = $request->tel;
+        $contact->contact = $request->contact;
+        $contact->save();
         // dd($input);
-        return view('confirm', ['input' => $input]);
+        return view('completed');
     }
 
 }

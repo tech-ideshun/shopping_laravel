@@ -5,6 +5,7 @@
     <h1>CONTACT</h1>
   </div>
 
+  {{ Form::open(['route' => 'shop.send']) }}
   <div class="container">
     <div>
       {{ Form::label('name', '名前') }}
@@ -24,9 +25,10 @@
     <div>
       {{ Form::label('contact', 'お問い合わせ内容') }}
       {{ $input['contact'] }}
-      {{ Form::hidden('contact', $input[contact]) }}
+      {{ Form::hidden('contact', $input['contact']) }}
     </div>
     <div>
+    <a href="{{ route('shop.contact') }}">お問い合わせに戻る</a>
       {{ Form::submit('送信') }}
     </div>
   </div>
