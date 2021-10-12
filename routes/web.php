@@ -26,6 +26,9 @@ Route::get('/shop/access', [CustomerController::class,'access'])->name('shop.acc
 Route::post('/shopping', [ProductController::class,'save'])->name('shopping.save');
 
 // customer
+Route::get('/shopping/company', [CustomerController::class,'company'])->name('shop.company');
+
+// customer
 Route::get('/shop/contact', [CustomerController::class,'contact'])->name('shop.contact');
 
 // customer

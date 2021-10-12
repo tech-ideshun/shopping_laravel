@@ -48,3 +48,34 @@ $('.slider').slick({
   }
 ]
 });
+
+
+// $(function() {
+// 	/* 「同意する」チェックイベント */
+// 	$('[type="checkbox"]').on('click', function(){
+// 		if($('[type="checkbox"]').prop("checked")){
+// 			$('[type="submit"]').css('background-color', 'rgb(51, 51, 255)');
+// 		} else {
+// 			$('[type="submit"]').css('background-color', 'rgb(102, 102, 102)');
+// 		}
+// 	});
+
+// 	/* 「同意する」がチェックされていない場合submit=false */
+// 	$('[type="submit"]').on('click', function(){
+// 		if ($('[type="submit"]').css('background-color') == 'rgb(102, 102, 102)') {
+// 			return false;
+// 		}
+// 	});
+// });
+
+$(function() {
+  $('#submit').prop('disabled', true);
+
+  $('#agree').on('click', function() {
+      if ($(this).prop('checked') == false) {
+          $('#submit').prop('disabled', true);
+      } else {
+          $('#submit').prop('disabled', false);
+      }
+  });
+});

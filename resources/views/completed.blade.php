@@ -5,7 +5,7 @@
     <h1>CONTACT</h1>
   </div>
 
-  <div>
+  <div class="completed">
     <h1>お問い合わせ 送信完了</h1>
     <p>
     お問い合わせありがとうございました。<br>

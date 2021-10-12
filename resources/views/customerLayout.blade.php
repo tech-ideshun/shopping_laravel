@@ -22,7 +22,7 @@
             <a href="{{ route('shop.access') }}"><span>Access</span>アクセス</a>
           </li>
           <li>
-            <a href=""><span>Company</span>会社概要</a>
+            <a href="{{ route('shop.company') }}"><span>Company</span>会社概要</a>
           </li>
           <li>
             <a href="{{ route('shop.contact') }}"><span>Contact</span>お問い合わせ</a>
@@ -54,5 +54,7 @@
     </div>
   </header>
   @yield('content')
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

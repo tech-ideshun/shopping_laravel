@@ -138,11 +138,13 @@ class CustomerController extends Controller
      */
     public function confirm(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'name' => 'required|max:10',
             'email' => 'required|email',
             'tel' => 'required|numeric|digits_between:10,11',
             'contact' => 'required|max:1000'
+            // 'acceptance-714' => 'required'
         ]);
         $input = $request->all();
         // dd($input);
@@ -162,6 +164,17 @@ class CustomerController extends Controller
             'tel' => 'required|numeric|digits_between:10,11',
             'contact' => 'required|max:1000'
         ]);
+        // dd($request->all());
+
+        // まずはsubmitのactionを代入
+        // $action = $request->input('action');
+        $action = request('action');
+        // $action = $request->action;
+        // 上記のactionを除いたinputの値を取得
+        $input = $request->except('action');
+        if($action !== 'submit'){
+            return redirect()->route('shop.contact')->withInput($input);
+        }
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->tel = $request->tel;
@@ -169,7 +182,17 @@ class CustomerController extends Controller
         $contact->save();
         // dd($input);
         return view('completed');
+        
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function company()
+    {
+        return view('company');
+    }
 }
 
