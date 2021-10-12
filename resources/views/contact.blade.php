@@ -5,7 +5,7 @@
     <h1>CONTACT</h1>
   </div>
   @if (count($errors) > 0)
-    <div>
+    <div class="errors">
       <ul>
         @foreach ($errors->all() as $error)
           <li id="error">{{ $error }}</li>
@@ -60,13 +60,13 @@
         </div>
         <div class="box_check">
             <label>
-                <input type="checkbox" name="acceptance-714" value="1" aria-invalid="false" class="agree"><span class="check">プライバシーポリシーに同意する</span>
+                <input type="checkbox" name="accept" value="" aria-invalid="false" class="agree" required="required" id="agree"><span class="check">プライバシーポリシーに同意する</span>
             </label>
         </div>
     </div>
 
     <div class="contact-btn">
-      {{ Form::submit(' 確認 ') }}
+      {{ Form::button(' 入力内容を確認する ', ['type' => 'submit', 'name' => 'action', 'id' => 'submit', 'value' => 'submit', 'class' => 'disabled-btn', 'readonly' => 'readonly']) }}
     </div>
   </div>
   {{ Form::close() }}
